@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ of }}{% endblock title %}
+
+
+{% block content %}
+<main class="container mt-3">
+    <h1 class="display-5 mt-4">Летим из {{ of }}</h1>
+    <p class="mb-4">Найдено {{ count_tour }} туров, от {{ info_price[0] }} до {{ info_price[1] }} и от {{ info_nights[0]
+        }} ночей до {{ info_nights[0] }} ночей</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+        {% for i in data %}
+        <div class="col-4">
+            <div class="card mb-4">
+                <img src="{{data[i].picture}}" class="card-img-top img-fluid" alt="">
+                <div class="card-body">
+                    <h2 class="h5 card-title">{{ data[i].title }}</h2>
+                    <p class="card-text">{{ data[i].description | truncate(100)}}</p>
+                    <a href="/tours/{{ i }}" class="btn btn-sm btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock content %}

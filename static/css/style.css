@@ -1,0 +1,19 @@
+.author {
+    color: rgb(0, 23, 230);
+}
+h1, h2 {
+    color: rgb(231, 26, 26);
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    text-decoration-line:underline;
+}
+
+div.book p {
+    font-weight: 55;
+    font-style: italic;
+}
+
+.text {
+    font-weight: 900;
+}

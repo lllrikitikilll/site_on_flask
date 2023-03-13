@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <div class="alert alert-warning" role="alert-warning">
+    <p style="font-size: 50px; display: center; ">Вы бедны у вас нет денег</p>
+  </div>
+  
+<container style="align-content: center;">
+  <div class="row" >
+    <div class="col-4">
+      <div class="card text-center">
+        <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="https://taganrog.hh.ru/">Шанс</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://taganrog.hh.ru/">Удача</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="https://taganrog.hh.ru/">Богатство</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Вы бедны</h5>
+        <p class="card-text">Но у нас есть предложение</p>
+        <a href="https://taganrog.hh.ru/" class="btn btn-primary">Воспользоватся</a>
+      </div>
+    </div>
+  </div>
+ </div>
+</container>
+ {% endblock content %}

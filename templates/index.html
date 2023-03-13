@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title%}Главная страница{% endblock title %}
+
+
+  {% block content %}
+
+  <main class="container mt-3">
+    <!-- HERO -->
+    <section class="jumbotron text-center mt-4" style="background: url('https://c.wallhere.com/photos/1d/6d/5760x1080_px_cats_Chats_Felins_monitor_multi_multiple_screen-1906989.jpg!d'); background-position: center center">
+      <h1 class="display-4">Всякие туры</h1>
+      <p class="lead">Для тех, кого отвлекают дома</p>
+      <p class="mt-5 w-50 mx-auto">Лучшие направления, где никто не будет вам мешать сидеть на берегу и изучать программирование, дизайн, разработку игр и управление продуктами</p>
+    </section>
+    <!-- CARDS -->
+
+
+    <div class="row mt-5">
+      {% for i in data %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src="{{ data[i].picture }}" alt="" />
+          </div>
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ data[i].title }}</h2>
+            <p class="card-text">{{ data[i].description[:120]+"..." }}</p>
+            <a href="/tours/{{i}}" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+      </div>
+  </main>
+{% endblock content %}
