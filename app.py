@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from utils import get_all_data, get_one_by_id
+from utils import get_all_data, get_one_by_id, search_tour
 
 app = Flask(__name__)
 # тренировочный комментарий
@@ -48,6 +48,16 @@ def tours(id_):
 def you_bomg():
     return render_template('Nnot_money.html')
 
+@app.route('/search/', methods=['GET'])
+def search_tour():
+    tour = request.args.get('tour')
+    data = get_all_data()
+    tours = []
+    for i in data:
+        if tour.lower() in data[i]['country'].lower():
+            tours.append(data[i])
+
+    return render_template('search.html', tours=tours)
 
 if __name__ == "__main__":
     app.run(debug=True)

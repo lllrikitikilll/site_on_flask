@@ -13,8 +13,14 @@ def get_one_by_id(id_):
         if id_ == i:
             return data[i]
 
-
-print(get_one_by_id("3"))
+def search_tour(tour):
+    data = get_all_data()
+    tours = []
+    for i in data:
+        if tour.lower() in data[i]['country'].lower():
+            tours.append(data[i])
+    return tours
+print(search_tour("пакистан"))
 
 menu = [
     {"link": "/departure/msk", "title": "Из Москвы"},
