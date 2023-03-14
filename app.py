@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from utils import get_all_data, get_one_by_id
 
 app = Flask(__name__)
-
+# тренировочный комментарий
 
 @app.route("/")
 def index():
